@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+<div id="app">
+    <el-card class="box-card">
+        <div slot="header" class="clearfix">
+            <h1>宠物识别Demo</h1>
+        </div>
+        <el-upload
+                action="http://localhost:5000/api/v1/pets_classify/"
+                list-type="picture-card"
+                :on-preview="handlePictureCardPreview"
+                :on-success="handleUploadSuccess"
+                :on-remove="handleRemove">
+            <i class="el-icon-plus"></i>
+        </el-upload>
+        <el-dialog :visible.sync="dialogVisible">
+            <img width="100%" :src="dialogImageUrl" alt="">
+        </el-dialog>
+    </el-card>
+</div>
+</body>
+
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                dialogImageUrl: '',
+                dialogVisible: false
+            };
+        },
+        methods: {
+            handleRemove(file, fileList) {
+                console.log(file, fileList);
+                console.log(this.dialogImageUrl);
+            },
+            handlePictureCardPreview(file) {
+                this.dialogImageUrl = file.url;
+                this.dialogVisible = true;
+            },
+            handleUploadSuccess(response, file, fileList) {
+                this.$notify({
+                    title: '识别结果',
+                    message: response.data.msg,
+                    dangerouslyUseHTMLString: true,
+                    type: 'success',
+                    duration: 3000
+                });
+            }
+        }
+    })
+</script>
+</html>
