@@ -38,3 +38,7 @@
 请访问博文:
 
 [从零开始编写一个宠物识别系统（爬虫、模型训练和调优、模型部署、Web服务）](https://www.aaronjny.com/articles/2019/12/17/1576592367309.html) (https://www.aaronjny.com/articles/2019/12/17/1576592367309.html)
+
+或
+
+[从零开始编写一个宠物识别系统（爬虫、模型训练和调优、模型部署、Web服务）](https://blog.csdn.net/aaronjny/article/details/103605988) (https://blog.csdn.net/aaronjny/article/details/103605988)
