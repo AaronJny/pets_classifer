@@ -3,5 +3,5 @@ flask
 gevent
 lxml
 requests
-tensorflow==2.0.0
-
+tensorflow==2.3
+flask-cors

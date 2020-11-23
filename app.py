@@ -3,14 +3,17 @@
 # @Author  : AaronJny
 # @Time    : 2019/12/18
 # @Desc    :
+import tensorflow as tf
 from flask import Flask
 from flask import jsonify
 from flask import request, render_template
-import tensorflow as tf
-from models import my_densenet
+from flask_cors import CORS
+
 import settings
+from models import my_densenet
 
 app = Flask(__name__)
+CORS(app)
 
 # 导入模型
 model = my_densenet()
