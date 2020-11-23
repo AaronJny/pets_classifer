@@ -7,7 +7,6 @@ import tensorflow as tf
 from flask import Flask
 from flask import jsonify
 from flask import request, render_template
-from flask_cors import CORS
 
 import settings
 from models import my_densenet
