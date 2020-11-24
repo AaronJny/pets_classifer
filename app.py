@@ -12,7 +12,6 @@ import settings
 from models import my_densenet
 
 app = Flask(__name__)
-CORS(app)
 
 # 导入模型
 model = my_densenet()
