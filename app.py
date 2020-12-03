@@ -61,4 +61,4 @@ def pets_classify():
 
 
 if __name__ == '__main__':
-    app.run(port=settings.WEB_PORT)
+    app.run(host='0.0.0.0', port=settings.WEB_PORT)
