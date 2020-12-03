@@ -8,7 +8,12 @@ COPY . /app
 # 下载预训练的Model
 RUN mkdir -p /root/.keras/models \
     && cd /root/.keras/models \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends wget \
     && wget https://storage.googleapis.com/tensorflow/keras-applications/densenet/densenet121_weights_tf_dim_ordering_tf_kernels_notop.h5
+    && apt-get purge -y wget
+    && apt-get purge -y --auto-remove \
+    && rm -rf /var/lib/apt/lists/*
 #RUN mv /app/densenet121_weights_tf_dim_ordering_tf_kernels_notop.h5 /root/.keras/models
 # 安装依赖
 #RUN pip install -i https://mirrors.aliyun.com/pypi/simple/ -r requirements.txt
