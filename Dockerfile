@@ -1,6 +1,5 @@
 # 基础镜像
 FROM python:3.7-slim
-#FROM continuumio/anaconda3
 # 工作目录
 WORKDIR /app
 # 复制代码到镜像
@@ -14,9 +13,7 @@ RUN mkdir -p /root/.keras/models \
     && apt-get purge -y wget \
     && apt-get purge -y --auto-remove \
     && rm -rf /var/lib/apt/lists/*
-#RUN mv /app/densenet121_weights_tf_dim_ordering_tf_kernels_notop.h5 /root/.keras/models
 # 安装依赖
-#RUN pip install -i https://mirrors.aliyun.com/pypi/simple/ -r requirements.txt
 RUN pip install -r requirements.txt
 # 设置时区
 ENV TZ=Asia/Shanghai
