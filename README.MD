@@ -24,6 +24,11 @@
 - 通过`python3 app.py`启动web服务;
 - 浏览器打开 http://localhost:5000/ 访问index页面。
 
+> 项目现在支持使用docker启动啦~你可以选择拉取我构建好的docker镜像简单体验一下。
+> 安装好docker，然后在终端输入：
+> `docker run --rm -p 5000:5000 --name pet aaronjny/pets_classifier`
+> 等镜像拉取完成、并成功运行了容器后，可以在浏览器输入`http://localhost:5000/`进行体验。
+
 2.如何训练自己的模型？
 
 - 切换到项目根目录下;
@@ -32,6 +37,7 @@
 - 人工筛选，删除不正确的图片;
 - 修改`settings.py`里的相关参数;
 - 通过`python3 train.py`启动训练脚本。
+
 
 # 更多信息
 
