@@ -3,4 +3,4 @@ flask
 gevent
 lxml
 requests
-tensorflow==2.3
+tensorflow==2.5.1
